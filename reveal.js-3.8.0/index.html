@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h3>Asynchronous JavaScript</h3></section>
+				<section>
+					<h3>Synchronous JavaScript</h3>
+				</section>
+				<section>
+					<img src="изображения/stack-2-1.png" />
+				</section>
+				<section>
+					<img src="изображения/синхронный код.png" />
+				</section>
+				<section>
+					<h3>Asynchronous Code</h3>
+				</section>
+				<section>
+					<h3>setTimeout function</h3>
+				</section>
+				<section>
+					<img src="изображения/settimeout.png" />
+				</section>
+				<section>
+					<img src="изображения/eventloop1.png" >
+				</section>
+				<section>
+					<h3>Promises</h3>
+					<img src="изображения/promises.png" />
+				</section>
+				<section>
+					<ul>
+						<li>Fulfilled - the action relating to the promise succeeded</li>
+						<li>Rejected - the action relating to the promise failed</li>
+						<li>Pending - hasn't fulfilled or rejected yet</li>
+					</ul>
+				</section>
+				<section>
+					<pre>
+	var keepsHisWord;
+	keepsHisWord = true;
+	promise1 = new Promise(function(resolve, reject) {
+		if (keepsHisWord) {
+			resolve("The man likes to keep his word");
+		} else {
+			reject("The man doesnt want to keep his word");
+		}
+	});
+	console.log(promise1);
+					</pre>
+						<img src="изображения/promiseexample.png" />
+				</section>
+				<section>
+					<h3>Microtasks</h3>
+					<img src="изображения/microtask.png" />
+				</section>
+				<section>
+					<img src="изображения/microtaskexample.gif" >
+				</section>
+				<section><h3>Summary</h3></section>
+				<section><h3>Thanks for attention</h3></section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
